@@ -65,7 +65,7 @@ func testing(publicKey rsa.PublicKey, privateKey *rsa.PrivateKey) {
 }
 
 func main() {
-	if _, err := os.Stat("private_key.pem"); err == nil {
+	if _, err := os.Stat("private_key.pem"); err != nil {
 		_, privateKey := pix()
 		ExportKeys(privateKey)
 	}
